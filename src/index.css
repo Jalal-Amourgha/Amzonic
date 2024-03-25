@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    margin: 0 auto;
+    @media (max-width: 1024px) {
+      padding: 0px 15px;
+    }
+  }
+
+  /* #home {
+    @media (min-width: 1023px) {
+      height: calc(100vh - 120px);
+    }
+  } */
+
+  .select {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 0px 15px;
+    cursor: pointer;
+  }
+
+  #search-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+  }
+
+  .signup-page {
+    display: grid;
+    grid-template-columns: repeat(2, calc(100% / 2));
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  .ul-btns {
+    left: calc(50% - 42px);
+  }
+
+  .box-shadow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .popup {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 20px 30px 20px;
+    background-color: white;
+    text-align: center;
+    width: 400px;
+    border-radius: 3px;
+    z-index: 9999;
+  }
+  .countdownBar {
+    width: 90%;
+    height: 10px;
+    background-color: #ccc;
+    margin: 10px 0px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    z-index: 9998;
+  }
+}
