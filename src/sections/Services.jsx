@@ -6,9 +6,12 @@ const Services = () => {
     <section>
       <div className="container">
         <SectionTitle title="Our Services" />
-        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service) => (
-            <div key={service.title} className="text-center p-5">
+            <div
+              key={service.title}
+              className="text-center p-5  rounded-md  cursor-pointer duration-300 hover:bg-black hover:text-white"
+            >
               <div className="flex justify-center items-center m-auto bg-black w-[70px] h-[70px] rounded-full border-[8px] border-[#d7d7d7]">
                 <img
                   src={service.icon}

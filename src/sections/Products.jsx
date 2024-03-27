@@ -1,30 +1,32 @@
 import { products } from "../constants";
-import { SectionTitle, SaleCard, Arrows, Button } from "../components";
+import { SaleCard, Arrows, Button } from "../components";
+import { useGlobalContext } from "../context/AppContext";
 
 const Products = () => {
+  const { category } = useGlobalContext();
+
   return (
     <section>
       <div className="container">
-        <SectionTitle title="Our Products" />
-        <div className="flex justify-between items-center">
-          <h1 className="text-[30px] font-medium">Explore Our Products</h1>
-          <Arrows />
-        </div>
         <div className="grid grid-cold-1 md:grid-cols-2 xl:grid-cols-4 gap-10 mt-16">
-          {products.map((product) => (
-            <SaleCard
-              key={product.name}
-              img={product.img}
-              label={product.label}
-              newPrice={product.price}
-              oldPrice={product.oldPrice}
-              full={product.full}
-              empty={product.empty}
-              half={product.half}
-              rate={product.rate}
-              percent={product.percent}
-            />
-          ))}
+          {products.map((product) =>
+            product.category === category ? (
+              <SaleCard
+                key={product.name}
+                img={product.img}
+                label={product.name}
+                newPrice={product.price}
+                oldPrice={product.oldPrice}
+                full={product.startsFull}
+                empty={product.starsEmpty}
+                half={product.starsHalf}
+                rate={product.rate}
+                percent={product.percent}
+              />
+            ) : (
+              ""
+            )
+          )}
         </div>
         <div className="text-center my-10">
           <Button label="View All Products" />

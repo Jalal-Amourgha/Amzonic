@@ -4,7 +4,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [showPopup, setShowPopup] = useState(false);
-
+  const [category, setCategory] = useState("phone");
   const [myWishlist, setMyWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist-amazonic")) || []
   );
@@ -13,6 +13,10 @@ const AppProvider = ({ children }) => {
   const [numberOfWishlist, setNumberOfWishlist] = useState(
     myWishlist.filter((item) => !item.cart).length
   );
+  const [numberOfAddToCart, setNumberOfAddToCart] = useState(
+    myWishlist.filter((item) => item.cart).length
+  );
+
   const getTotalPrice = () => {
     let totalPrice = 0;
     myWishlist.forEach((item) => {
@@ -42,9 +46,12 @@ const AppProvider = ({ children }) => {
     console.log(newList);
     setMyWishlist(newList);
   };
+
   useEffect(() => {
-    const count = myWishlist.filter((item) => !item.cart).length;
-    setNumberOfWishlist(count);
+    const count1 = myWishlist.filter((item) => !item.cart).length;
+    setNumberOfWishlist(count1);
+    const count2 = myWishlist.filter((item) => item.cart).length;
+    setNumberOfAddToCart(count2);
   }, [myWishlist]);
 
   return (
@@ -60,13 +67,16 @@ const AppProvider = ({ children }) => {
         setQuantities,
         getTotalPrice,
         numberOfWishlist,
+        numberOfAddToCart,
+        category,
+        setCategory,
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
-// make sure use
+
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };

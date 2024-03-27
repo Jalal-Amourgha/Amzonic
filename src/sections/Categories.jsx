@@ -56,7 +56,7 @@ const Categories = () => {
           <h1 className="text-3xl font-medium">Browse By Category</h1>
           <Arrows prev={handleClickPrev} next={handleClickNext} />
         </div>
-        <div className="row">
+        <div className="flex justify-between items-center">
           {categories
             .slice(startIndex, startIndex + elementsInPage)
             .map((category) => (
@@ -64,6 +64,7 @@ const Categories = () => {
                 key={category.label}
                 icon={category.icon}
                 name={category.label}
+                categorySelected={category.category}
               />
             ))}
         </div>

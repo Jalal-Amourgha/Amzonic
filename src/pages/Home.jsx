@@ -9,6 +9,7 @@ import {
   BigOffer,
   Arrival,
   Products,
+  Subscribe,
 } from "../sections";
 
 const Home = () => {
@@ -18,17 +19,17 @@ const Home = () => {
       <Hero />
       <Sales />
       <Underline />
-      <Categories />
-      <Underline />
       <BestSelling />
       <Underline />
-      <BigOffer />
-      <Underline />
+      <Categories />
       <Products />
+      <Underline />
+      <BigOffer />
       <Underline />
       <Services />
       <Underline />
       <Arrival />
+      <Subscribe />
       {showPopup ? <Popup /> : ""}
     </>
   );

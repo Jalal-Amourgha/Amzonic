@@ -10,12 +10,6 @@
     }
   }
 
-  /* #home {
-    @media (min-width: 1023px) {
-      height: calc(100vh - 120px);
-    }
-  } */
-
   .select {
     background: none;
     outline: none;
@@ -46,6 +40,10 @@
 
   .col {
     flex: 1;
+  }
+  .selected {
+    background: #db4444;
+    color: white !important;
   }
 
   .ul-btns {

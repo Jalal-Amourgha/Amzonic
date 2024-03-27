@@ -1,9 +1,15 @@
 import { footerLinks, socials } from "../constants";
 import { qrCode, googlePlay, appStore } from "../assets/icons";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   return (
-    <footer className="py-8 bg-black text-white mt-[200px]">
+    <footer
+      className={`py-8 bg-black text-white ${
+        pathname !== "/" ? "mt-[150px]" : ""
+      }`}
+    >
       <div className="container">
         <div className="grid sm:grid-cols-3  lg:grid-cols-3 xl:grid-cols-5 gap-x-3">
           <div className="mb-4">

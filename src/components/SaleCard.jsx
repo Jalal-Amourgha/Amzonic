@@ -71,7 +71,7 @@ const SaleCard = ({
         )}
       </div>
       <div className="mt-2">
-        <h1 className="font-medium">{label}</h1>
+        <h1 className="text-2xl font-medium my-4">{label}</h1>
         <h1 className="text-main-color font-bold text-xl my-3">
           ${newPrice}
           {oldPrice !== "" ? (

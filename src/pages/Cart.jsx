@@ -7,7 +7,6 @@ const Cart = () => {
   return (
     <>
       <PageSection name="Cart" />
-
       <CartBar />
       <CartItems />
       <div className="container">

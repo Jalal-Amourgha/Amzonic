@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useGlobalContext } from "../context/AppContext";
 
 const Navbar = () => {
-  const { numberOfWishlist } = useGlobalContext();
+  const { numberOfWishlist, numberOfAddToCart } = useGlobalContext();
   const [showNavbar, setShowNavbar] = useState(false);
   const handelNavbar = () => {
     setShowNavbar(!showNavbar);
@@ -49,8 +49,7 @@ const Navbar = () => {
                 {numberOfWishlist}
               </div>
             </div>
-
-            <div>
+            <div className="relative">
               <Link to="cart">
                 <img
                   src={cart}
@@ -58,6 +57,9 @@ const Navbar = () => {
                   alt="cart icon"
                 />
               </Link>
+              <div className="absolute top-[-10px] right-[-10px] flex justify-center items-center  h-[20px] w-[20px] bg-main-color text-white rounded-full">
+                {numberOfAddToCart}
+              </div>
             </div>
           </div>
           <div className="lg:hidden block">
