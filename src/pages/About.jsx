@@ -25,7 +25,11 @@ const About = () => {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            <img src={aboutImg} className="max-w-full" alt="about img" />
+            <img
+              src={aboutImg}
+              className="max-w-full rounded-md"
+              alt="about img"
+            />
           </div>
         </div>
         <Underline />

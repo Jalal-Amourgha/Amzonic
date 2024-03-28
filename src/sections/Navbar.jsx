@@ -16,27 +16,16 @@ const Navbar = () => {
       <div className="container">
         <nav className="flex justify-between items-center">
           <a href="/" className="text-3xl font-bold">
-            Amazonic
+            <span className="text-main-color">Tech</span> Shop
           </a>
           <ul className="list-none hidden lg:flex p-0 m-0 items-center">
             {navLinks.map((link) => (
-              <li
-                key={link.label}
-                className="p-1 mx-3 text-xl hover:text-main-color"
-              >
+              <li key={link.label} className="link">
                 <Link to={link.href}>{link.label}</Link>
               </li>
             ))}
           </ul>
           <div className="hidden lg:flex items-center ">
-            {/* <div className="relative w-[260px]">
-              <input
-                type="text"
-                className="bg-gray outline-none px-3 py-2 w-full"
-                placeholder="What are you looking for?"
-              />
-              <i className="fa-solid fa-magnifying-glass" id="search-icon"></i>
-            </div> */}
             <div className="relative mr-4">
               <Link to="wishlist">
                 <img

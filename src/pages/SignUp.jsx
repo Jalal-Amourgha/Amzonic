@@ -21,7 +21,11 @@ const SignUp = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="hidden lg:block">
-            <img src={signupImg} className="m-auto mb-10" alt="signup img" />
+            <img
+              src={signupImg}
+              className="m-auto rounded-md mb-10"
+              alt="signup img"
+            />
           </div>
           <div className="flex justify-between items-center">
             <div className="w-[370px] block  m-auto">

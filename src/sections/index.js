@@ -1,4 +1,3 @@
-import TopHeader from "./TopHeader";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Sales from "./Sales";
@@ -19,7 +18,6 @@ import CartItems from "./CartItems";
 import BillingDetails from "./BillingDetails";
 
 export {
-  TopHeader,
   Navbar,
   Hero,
   Sales,

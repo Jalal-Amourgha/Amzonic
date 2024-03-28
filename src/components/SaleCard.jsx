@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { heart, eye } from "../assets/icons";
 import { useGlobalContext } from "../context/AppContext";
+import { Link } from "react-router-dom";
 
 const SaleCard = ({
   img,
@@ -106,15 +106,29 @@ const SaleCard = ({
           ""
         ) : (
           <div
-            className="h-[30px] w-[30px] bg-white rounded-full mb-2 flex justify-center items-center hover:bg-green-400 hover:text-white cursor-pointer"
+            className="h-[30px] w-[30px] bg-white rounded-full mb-2 flex justify-center items-center duration-300 hover:bg-green-400 hover:text-white cursor-pointer"
             onClick={updateList}
           >
             <i className="fa-regular fa-heart"></i>
           </div>
         )}
-        <div className="h-[30px] w-[30px] bg-white rounded-full flex justify-center items-center cursor-pointer">
-          <img src={eye} alt="heart icon" className="w-[20px] h-[20px]" />
-        </div>
+        <Link
+          to={`/viewproduct/${label}`}
+          state={[
+            {
+              img: img,
+              name: label,
+              price: newPrice,
+              reviews: rate,
+              FullStars: full,
+              HalfStars: half,
+              EmptyStars: empty,
+            },
+          ]}
+          className="h-[30px] w-[30px] bg-white rounded-full flex justify-center items-center duration-300  hover:bg-blue-400 hover:text-white cursor-pointer"
+        >
+          <i className="fa-regular fa-eye"></i>
+        </Link>
       </div>
     </div>
   );

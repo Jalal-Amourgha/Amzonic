@@ -1,13 +1,13 @@
 import { SectionTitle, Button, SaleCard } from "../components";
 import { bestSelling } from "../constants";
 
-const BestSelling = () => {
+const BestSelling = ({ section }) => {
   return (
     <section>
       <div className="container">
         <SectionTitle title="This Month" />
         <div className="flex justify-between">
-          <h1 className="text-3xl font-medium">Best Selling Products</h1>
+          <h1 className="text-3xl font-medium">{section}</h1>
           <Button label="View All" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-10 mt-10">

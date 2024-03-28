@@ -1,6 +1,5 @@
 import heart from "./heart.png";
 import cart from "./cart.png";
-import eye from "./eye.png";
 
 import menu from "./menu.png";
 
@@ -25,7 +24,6 @@ import paypal from "./paypal.png";
 export {
   heart,
   cart,
-  eye,
   menu,
   qrCode,
   googlePlay,

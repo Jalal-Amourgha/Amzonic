@@ -11,9 +11,16 @@ const Footer = () => {
       }`}
     >
       <div className="container">
-        <div className="grid sm:grid-cols-3  lg:grid-cols-3 xl:grid-cols-5 gap-x-3">
+        <div className="grid sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-x-3">
           <div className="mb-4">
-            <h1 className="text-xl font-medium mb-4">Amazonic</h1>
+            <h1 className="text-2xl font-medium mb-4">
+              <span className="text-main-color">Tech</span> Shop
+            </h1>
+            <p className="pe-2">
+              Dive into a world where innovation meets convenience. Explore our
+              carefully curated selection of cutting-edge gadgets designed to
+              elevate your digital lifestyle.
+            </p>
           </div>
           {footerLinks.map((section) => (
             <div key={section.label} className="mb-4">
@@ -38,15 +45,23 @@ const Footer = () => {
                 <img src={qrCode} alt="qrcode" />
               </div>
               <div>
-                <img src={googlePlay} className="mb-3" alt="google play img" />
-                <img src={appStore} alt="App Store img" />
+                <img
+                  src={googlePlay}
+                  className="mb-3 cursor-pointer"
+                  alt="google play img"
+                />
+                <img
+                  src={appStore}
+                  className="cursor-pointe"
+                  alt="App Store img"
+                />
               </div>
             </div>
             <div className="mt-6">
               {socials.map((social) => (
                 <i
                   key={social.label}
-                  className={`${social.icon} text-2xl mr-5 cursor-pointer`}
+                  className={`${social.icon} text-2xl mr-5 cursor-pointer hover:text-main-color duration-300`}
                 ></i>
               ))}
             </div>

@@ -10,6 +10,32 @@
     }
   }
 
+  .link {
+    position: relative;
+    font-size: 18px;
+
+    margin: 0px 15px;
+    transition: 0.5s;
+  }
+
+  .link::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 1px;
+    width: 0px;
+    transition: 0.5s;
+    background: #db4444;
+  }
+
+  .link:hover {
+    color: #db4444;
+  }
+  .link:hover::after {
+    width: 100%;
+  }
+
   .select {
     background: none;
     outline: none;
@@ -17,6 +43,13 @@
     color: white;
     padding: 0px 15px;
     cursor: pointer;
+  }
+
+  .category-box {
+    @media (max-width: 450px) {
+      height: 120px !important;
+      width: 120px !important;
+    }
   }
 
   #search-icon {
@@ -33,14 +66,7 @@
       grid-template-columns: repeat(1, 100%);
     }
   }
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
 
-  .col {
-    flex: 1;
-  }
   .selected {
     background: #db4444;
     color: white !important;

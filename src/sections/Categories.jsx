@@ -20,39 +20,30 @@ const Categories = () => {
     }
   };
 
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-
-  const updateWindowSize = () => {
-    setWindowSize(window.innerWidth);
-  };
-
   useEffect(() => {
-    window.addEventListener("resize", updateWindowSize);
-
-    return () => {
-      window.removeEventListener("resize", updateWindowSize);
+    const handleResize = () => {
+      if (window.innerWidth > 1340) {
+        setElementsInPage(6);
+      } else if (window.innerWidth < 1340 && window.innerWidth > 1000) {
+        setElementsInPage(5);
+      } else if (window.innerWidth < 1000 && window.innerWidth > 810) {
+        setElementsInPage(4);
+      } else if (window.innerWidth < 810 && window.innerWidth > 600) {
+        setElementsInPage(3);
+      } else if (window.innerWidth < 600 && window.innerWidth > 400) {
+        setElementsInPage(2);
+      }
     };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  useEffect(() => {
-    if (windowSize > 1340) {
-      setElementsInPage(6);
-    } else if (windowSize < 1340 && windowSize > 1000) {
-      setElementsInPage(5);
-    } else if (windowSize < 1000 && windowSize > 810) {
-      setElementsInPage(4);
-    } else if (windowSize < 810 && windowSize > 600) {
-      setElementsInPage(3);
-    } else if (windowSize < 600 && windowSize > 400) {
-      setElementsInPage(2);
-    }
-  }, [windowSize]);
 
   return (
     <section>
       <div className="container">
         <SectionTitle title="Categories" />
-        <div className="flex justify-between mb-5">
+        <div className="flex justify-between items-center mb-5">
           <h1 className="text-3xl font-medium">Browse By Category</h1>
           <Arrows prev={handleClickPrev} next={handleClickNext} />
         </div>

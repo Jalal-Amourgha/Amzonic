@@ -7,6 +7,7 @@ import {
   Wishlist,
   Cart,
   Billing,
+  ViewProduct,
   Error,
 } from "./pages";
 import { Navbar, Footer } from "./sections";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/billing" element={<Billing />}></Route>
+          <Route path="/viewproduct/:id" element={<ViewProduct />}></Route>
           <Route path="/*" element={<Error />}></Route>
         </Routes>
         <Footer className="mt-[100px]" />

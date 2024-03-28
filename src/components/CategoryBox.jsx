@@ -4,7 +4,7 @@ const CategoryBox = ({ icon, name, categorySelected }) => {
   return (
     <div className="col" onClick={() => setCategory(categorySelected)}>
       <div
-        className={`h-[145px] max-w-[170px] flex justify-center items-center flex-col border border-b-color rounded-md text-center text-black hover:bg-main-color hover:text-white hover:border-main-color duration-500 cursor-pointer 54 ${
+        className={`h-[145px] w-[170px] flex justify-center items-center flex-col border border-b-color rounded-md text-center text-black hover:bg-main-color hover:text-white hover:border-main-color duration-500 cursor-pointer category-box ${
           category === categorySelected ? "selected" : ""
         }`}
       >
